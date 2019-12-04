@@ -1,4 +1,4 @@
-package com.metrica.formacion.eurekazuulserver.security;
+package com.metrica.formacion.eurekazuulserver.Security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
