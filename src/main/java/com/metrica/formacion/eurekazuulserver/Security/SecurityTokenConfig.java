@@ -29,21 +29,21 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
 
                     //Api Usuarios -
                     .antMatchers(HttpMethod.GET,"/clientes/**").permitAll()
-                    .antMatchers(HttpMethod.POST,"/clientes/**").authenticated()
-                    .antMatchers(HttpMethod.PUT,"/clientes/**").authenticated()
-                    .antMatchers(HttpMethod.DELETE,"/clientes/**").authenticated()
+                    .antMatchers(HttpMethod.POST,"/clientes/**").permitAll()
+                    .antMatchers(HttpMethod.PUT,"/clientes/**").permitAll()
+                    .antMatchers(HttpMethod.DELETE,"/clientes/**").permitAll()
 
                     //Api Grupos -
                     .antMatchers(HttpMethod.GET,"/grupos/**").permitAll()
-                    .antMatchers(HttpMethod.POST,"/grupos/**").authenticated()
-                    .antMatchers(HttpMethod.PUT,"/grupos/**").authenticated()
-                    .antMatchers(HttpMethod.DELETE,"/grupos/**").authenticated()
+                    .antMatchers(HttpMethod.POST,"/grupos/**").permitAll()
+                    .antMatchers(HttpMethod.PUT,"/grupos/**").permitAll()
+                    .antMatchers(HttpMethod.DELETE,"/grupos/**").permitAll()
 
                     //Metrica service -
                     .antMatchers(HttpMethod.GET,"/serviceMetrica/**").permitAll()
-                    .antMatchers(HttpMethod.PUT,"/serviceMetrica/**").authenticated()
-                    .antMatchers(HttpMethod.POST,"/serviceMetrica/**").authenticated()
-                    .antMatchers(HttpMethod.DELETE,"/serviceMetrica/**").authenticated()
-                    .anyRequest().authenticated();
+                    .antMatchers(HttpMethod.PUT,"/serviceMetrica/**").permitAll()
+                    .antMatchers(HttpMethod.POST,"/serviceMetrica/**").permitAll()
+                    .antMatchers(HttpMethod.DELETE,"/serviceMetrica/**").permitAll()
+                    .anyRequest().permitAll();
     }
 }
