@@ -31,19 +31,19 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers(HttpMethod.GET,"/clientes/**").permitAll()
                     .antMatchers(HttpMethod.POST,"/clientes/**").authenticated()
                     .antMatchers(HttpMethod.PUT,"/clientes/**").authenticated()
-                    .antMatchers(HttpMethod.DELETE,"/clientes/**").hasRole("ADMIN")
+                    .antMatchers(HttpMethod.DELETE,"/clientes/**").authenticated()
 
                     //Api Grupos -
                     .antMatchers(HttpMethod.GET,"/grupos/**").permitAll()
                     .antMatchers(HttpMethod.POST,"/grupos/**").authenticated()
                     .antMatchers(HttpMethod.PUT,"/grupos/**").authenticated()
-                    .antMatchers(HttpMethod.DELETE,"/grupos/**").hasRole("ADMIN")
+                    .antMatchers(HttpMethod.DELETE,"/grupos/**").authenticated()
 
                     //Metrica service -
                     .antMatchers(HttpMethod.GET,"/serviceMetrica/**").permitAll()
                     .antMatchers(HttpMethod.PUT,"/serviceMetrica/**").authenticated()
                     .antMatchers(HttpMethod.POST,"/serviceMetrica/**").authenticated()
-                    .antMatchers(HttpMethod.DELETE,"/serviceMetrica/**").hasRole("ADMIN")
+                    .antMatchers(HttpMethod.DELETE,"/serviceMetrica/**").authenticated()
                     .anyRequest().authenticated();
     }
 }
